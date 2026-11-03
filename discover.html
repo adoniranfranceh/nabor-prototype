@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<title>Nabor · Home</title>
+</head>
+<body>
+<div class="app">
+  <div data-include="partials/topbar.html"></div>
+
+  <main style="flex: 1 0 auto; padding-bottom: var(--s-12)">
+    <section class="container hero">
+      <div class="hero__text">
+        <span class="hero__eyebrow">Hi Jamie</span>
+        <h1 class="hero__title" data-hero-title></h1>
+        <p class="hero__lead" data-hero-lead hidden></p>
+      </div>
+      <a class="btn btn--primary btn--lg hero__cta" href="#" data-hero-cta hidden>Start the first campaign</a>
+    </section>
+
+    <section class="container stack" style="gap: var(--s-4)" data-list-section>
+      <div class="category-bar" role="group" aria-label="Filter by type of service" data-filters></div>
+      <div class="cards" style="margin-top: var(--s-2)" data-services></div>
+    </section>
+
+    <div class="container" data-starters></div>
+
+    <section class="container stack" style="gap: var(--s-3); margin-top: var(--s-10)">
+      <div data-invite></div>
+      <p style="color: var(--ink-2); font-size: var(--t-sm)">Questions? Call us at [PHONE], Mon–Fri 9am–6pm. Real people in the Boston area.</p>
+    </section>
+  </main>
+
+  <div data-include="partials/bottombar.html"></div>
+</div>
+<script type="module" src="js/discover.js"></script>
+</body>
+</html>

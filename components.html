@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/workbench.css">
+<title>Nabor · Components</title>
+</head>
+<body>
+<div class="wb">
+  <nav class="wb__nav" aria-label="Components">
+    <h1>Components</h1>
+    <div data-wb-links></div>
+    <a class="wb__all" href="components.html">Show all</a>
+    <a class="wb__all" href="preview.html">Phone + desktop preview</a>
+    <a class="wb__all" href="brand.html">Brand assets</a>
+  </nav>
+
+  <main class="wb__main">
+    <section class="wb-section" id="tokens" data-title="Tokens">
+      <h2 class="wb-section__title">Tokens</h2>
+      <span class="wb-section__file">css/tokens.css</span>
+      <div data-swatches></div>
+      <div data-type-scale></div>
+      <div data-space-scale></div>
+    </section>
+
+    <section class="wb-section" id="topbar" data-title="Top bar">
+      <h2 class="wb-section__title">Top bar</h2>
+      <span class="wb-section__file">partials/topbar.html · css/components/topbar.css · logo.css</span>
+      <div class="wb-stages">
+        <div class="stage stage--phone"><span class="stage__label">Phone · 390</span><div data-include="partials/topbar.html"></div></div>
+        <div class="stage stage--wide"><span class="stage__label">Desktop · fluid</span><div data-include="partials/topbar.html"></div></div>
+      </div>
+    </section>
+
+    <section class="wb-section" id="bottombar" data-title="Bottom bar">
+      <h2 class="wb-section__title">Bottom bar · phone only</h2>
+      <span class="wb-section__file">partials/bottombar.html · css/components/bottombar.css</span>
+      <div class="wb-stages">
+        <div class="stage stage--phone"><span class="stage__label">Phone · 390</span><div data-include="partials/bottombar.html"></div></div>
+      </div>
+    </section>
+
+    <section class="wb-section" id="hero" data-title="Hero / title">
+      <h2 class="wb-section__title">Hero / title</h2>
+      <span class="wb-section__file">css/components/hero.css · variants in js/workbench.js</span>
+      <div class="wb-stages" data-hero-variants></div>
+    </section>
+
+    <section class="wb-section" id="buttons" data-title="Buttons">
+      <h2 class="wb-section__title">Buttons</h2>
+      <span class="wb-section__file">css/components/button.css</span>
+      <div class="wb-stages">
+        <div class="stage stage--phone"><span class="stage__label">Phone · 390</span>
+          <div class="stage__body stack" style="gap: 12px">
+            <a class="btn btn--primary btn--lg btn--block" href="#">Start something in your neighborhood</a>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap">
+              <a class="btn btn--primary" href="#">Primary</a>
+              <a class="btn btn--tint" href="#">Tint</a>
+              <a class="btn btn--ghost" href="#">Ghost</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wb-section" id="category-bar" data-title="Category bar">
+      <h2 class="wb-section__title">Category bar · shown with 6+ services</h2>
+      <span class="wb-section__file">js/category-bar.js · js/filter-icons.js · css/components/category-bar.css</span>
+      <div class="wb-stages">
+        <div class="stage stage--phone"><span class="stage__label">Phone · 390</span><div class="stage__body"><div class="category-bar" data-wb-bar></div></div></div>
+        <div class="stage stage--wide"><span class="stage__label">Desktop · fluid</span><div class="stage__body"><div class="category-bar" data-wb-bar></div></div></div>
+      </div>
+    </section>
+
+    <section class="wb-section" id="service-card" data-title="Service card">
+      <h2 class="wb-section__title">Service card</h2>
+      <span class="wb-section__file">js/photo-card.js · js/offers.js · css/components/photo-card.css · css/components/cards.css</span>
+      <div class="wb-stages">
+        <div class="stage stage--phone"><span class="stage__label">Several offers, provider and neighbors mixed</span><div class="stage__body" data-wb-photo="gutter"></div></div>
+        <div class="stage stage--phone"><span class="stage__label">Single provider offer, ending soon</span><div class="stage__body" data-wb-photo="sprinkler"></div></div>
+        <div class="stage stage--phone"><span class="stage__label">Single neighbors' offer</span><div class="stage__body" data-wb-photo="heating"></div></div>
+      </div>
+      <div class="wb-stages">
+        <div class="stage stage--wide"><span class="stage__label">Desktop grid</span><div class="stage__body"><div class="cards" data-wb-photo-grid></div><p class="wb-credits" data-wb-credits></p></div></div>
+      </div>
+    </section>
+
+    <section class="wb-section" id="numbers" data-title="Numbers">
+      <h2 class="wb-section__title">Numbers</h2>
+      <span class="wb-section__file">js/format.js · js/count-html.js</span>
+      <div class="wb-stages">
+        <div class="stage stage--phone"><span class="stage__label">Count formatting (screen reader hears the second column)</span><div class="stage__body" data-wb-numbers></div></div>
+      </div>
+    </section>
+
+    <section class="wb-section" id="start" data-title="Start a campaign">
+      <h2 class="wb-section__title">Start a campaign</h2>
+      <span class="wb-section__file">js/starters.js · js/suggestions.js · css/components/starters.css</span>
+      <div class="wb-stages">
+        <div class="stage stage--phone"><span class="stage__label">Phone · 390</span><div class="stage__body" data-wb-starters></div></div>
+        <div class="stage stage--wide"><span class="stage__label">Desktop · fluid</span><div class="stage__body" data-wb-starters></div></div>
+      </div>
+    </section>
+
+    <section class="wb-section" id="invite" data-title="Invite">
+      <h2 class="wb-section__title">Invite</h2>
+      <span class="wb-section__file">css/components/invite.css · js/invite.js</span>
+      <div class="wb-stages">
+        <div class="stage stage--phone"><span class="stage__label">Phone · 390</span><div class="stage__body" data-wb-invite></div></div>
+      </div>
+      <div class="wb-stages">
+        <div class="stage stage--wide"><span class="stage__label">Desktop · fluid</span><div class="stage__body" data-wb-invite></div></div>
+      </div>
+    </section>
+  </main>
+</div>
+<script type="module" src="js/workbench.js"></script>
+</body>
+</html>

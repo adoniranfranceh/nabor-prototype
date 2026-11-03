@@ -1,0 +1,110 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--s-6);
+  min-height: 64px;
+}
+
+.topbar__nav { display: none; gap: var(--s-1); }
+
+.topbar__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  padding: 0 var(--s-4);
+  color: var(--ink-2);
+  font-weight: var(--w-semibold);
+  text-decoration: none;
+}
+.topbar__link::after {
+  content: "";
+  position: absolute;
+  left: var(--s-3);
+  right: var(--s-3);
+  bottom: -10px;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: transparent;
+}
+.topbar__link:hover { color: var(--ink); }
+.topbar__link:hover::after { background: var(--line-2); }
+.topbar__link[aria-current="page"] { color: var(--brand); font-weight: var(--w-bold); }
+.topbar__link[aria-current="page"]::after { background: var(--brand); }
+
+.topbar__actions { margin-left: auto; display: flex; align-items: center; gap: var(--s-2); }
+
+.icon-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tap);
+  height: var(--tap);
+  border-radius: 50%;
+  color: var(--ink-2);
+  text-decoration: none;
+}
+.icon-btn:hover { color: var(--ink); background: var(--surface-2); }
+.icon-btn svg { width: 24px; height: 24px; }
+
+.count-badge {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border: 2px solid var(--surface);
+  border-radius: var(--r-pill);
+  background: var(--brand);
+  color: var(--surface);
+  font-size: 12px;
+  font-weight: var(--w-bold);
+  line-height: 16px;
+  text-align: center;
+}
+
+.account-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  min-height: var(--tap);
+  padding: 0 var(--s-1);
+  border-radius: var(--r-pill);
+  color: var(--ink-2);
+  text-decoration: none;
+}
+.account-btn:hover { color: var(--ink); background: var(--surface-2); }
+.account-btn > svg { width: 18px; height: 18px; flex: none; }
+
+.location-btn {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  min-height: var(--tap);
+  padding: 0 var(--s-3) 0 10px;
+  border-radius: var(--r-pill);
+  color: var(--ink);
+  font-weight: var(--w-bold);
+  font-size: 16px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.location-btn:hover { color: var(--ink); background: var(--surface-2); }
+.location-btn svg { width: 18px; height: 18px; flex: none; }
+.location-btn__pin { color: var(--brand); }
+.location-btn__chevron { color: var(--ink-2); }
+
+@container app (min-width: 760px) {
+  .topbar__nav { display: flex; }
+  .location-btn { display: inline-flex; }
+}

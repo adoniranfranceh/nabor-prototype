@@ -1,0 +1,86 @@
+.photo-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  box-shadow: 0 1px 2px rgba(30, 25, 20, 0.06), 0 6px 20px rgba(30, 25, 20, 0.06);
+  transition: box-shadow 160ms ease, transform 160ms ease;
+}
+.photo-card:hover { box-shadow: 0 2px 4px rgba(30, 25, 20, 0.08), 0 12px 28px rgba(30, 25, 20, 0.1); transform: translateY(-2px); }
+.photo-card:focus-within { outline: 3px solid var(--ink); outline-offset: 2px; }
+
+.photo-card__media { position: relative; aspect-ratio: 16 / 10; background: var(--surface-3); }
+.photo-card__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.photo-card__pill {
+  position: absolute;
+  top: var(--s-3);
+  padding: 5px 10px;
+  border-radius: var(--r-pill);
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: var(--w-bold);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+.photo-card__pill--days { left: var(--s-3); }
+.photo-card__pill--tag { right: var(--s-3); }
+.photo-card.is-ending .photo-card__pill--days { background: var(--ink); color: var(--surface); }
+
+.photo-card__body { display: flex; flex-direction: column; gap: 4px; padding: var(--s-4) var(--s-4) var(--s-5); }
+.photo-card__row { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s-3); }
+.photo-card__title { font-size: var(--t-lg); line-height: 1.25; font-weight: var(--w-bold); }
+.photo-card__link, .photo-card__link:hover { color: inherit; text-decoration: none; }
+.photo-card__link::after { content: ""; position: absolute; inset: 0; }
+.photo-card__link:focus-visible { outline: none; }
+.photo-card__rating { display: inline-flex; align-items: center; gap: 3px; font-size: var(--t-sm); font-weight: var(--w-semibold); white-space: nowrap; }
+.photo-card__rating svg { width: 14px; height: 14px; }
+
+.photo-card__sub { color: var(--ink-2); font-size: var(--t-sm); }
+.photo-card__price { margin-top: 2px; color: var(--ink-2); }
+.photo-card__price strong { color: var(--ink); font-size: var(--t-lg); font-weight: var(--w-bold); }
+
+.photo-card__progress { display: flex; flex-direction: column; gap: 6px; margin-top: var(--s-3); }
+
+.houses { display: flex; align-items: center; gap: 4px; min-height: 28px; }
+.houses__joined {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+  padding: 1px 10px 0 8px;
+  margin-right: 4px;
+  border-radius: var(--r-pill);
+  background: var(--brand-logo);
+  color: var(--surface);
+  font-size: 15px;
+  font-weight: var(--w-bold);
+  animation: house-in 360ms ease-out both;
+}
+.houses__joined svg { position: relative; top: -1px; width: 15px; height: 15px; fill: currentColor; }
+.houses__home { width: 20px; height: 20px; color: var(--line-2); animation: house-in 360ms ease-out both; }
+.houses__home svg { display: block; width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linejoin: round; }
+.houses__missing {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+  padding: 1px 10px 0 8px;
+  border-radius: var(--r-pill);
+  box-shadow: inset 0 0 0 1.5px var(--line-2);
+  color: var(--ink-2);
+  font-size: 15px;
+  font-weight: var(--w-bold);
+  animation: house-in 360ms ease-out both;
+}
+.houses__missing svg { position: relative; top: -1px; width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linejoin: round; }
+@keyframes house-in { from { opacity: 0; transform: translateY(3px); } }
+.photo-card__unlock { color: var(--ink-2); font-size: var(--t-sm); }
+.photo-card__unlock strong { color: var(--ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-card, .photo-card:hover { transition: none; transform: none; }
+  .houses__joined, .houses__home, .houses__missing { animation: none; }
+}

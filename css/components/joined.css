@@ -1,0 +1,82 @@
+.joined-page { width: 100%; max-width: 640px; margin: 0 auto; }
+.joined-body { display: flex; flex-direction: column; gap: var(--s-8); padding: var(--s-2) var(--s-4) var(--s-10); }
+
+.joined { display: flex; flex-direction: column; align-items: center; gap: var(--s-3); text-align: center; }
+.joined__badge { display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 50%; background: var(--success-tint); color: var(--success); }
+.joined__badge svg { width: 32px; height: 32px; }
+.joined__title { font-size: var(--t-2xl); font-weight: var(--w-heading); outline: none; }
+.joined__text { color: var(--ink-2); max-width: 420px; text-wrap: balance; }
+.joined__meter { margin-top: var(--s-2); }
+
+.invite-box { display: flex; flex-direction: column; gap: var(--s-3); padding: var(--s-5); border-radius: var(--r-lg); background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
+.invite-box__title { font-size: var(--t-lg); line-height: 1.25; font-weight: var(--w-heading); }
+.invite-box__text { color: var(--ink-2); font-size: var(--t-sm); }
+.invite-box__actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-2); margin-top: var(--s-1); }
+
+.next-steps { display: flex; flex-direction: column; gap: var(--s-4); margin-top: var(--s-4); }
+.next-steps__title { font-size: var(--t-lg); font-weight: var(--w-heading); }
+.next-steps__list { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
+.next-steps__item { position: relative; display: flex; gap: var(--s-3); padding-bottom: var(--s-6); color: var(--ink-2); }
+.next-steps__item:last-child { padding-bottom: 0; }
+.next-steps__link { color: var(--ink-2); text-decoration: underline; text-underline-offset: 3px; }
+.next-steps__link:hover { color: var(--ink); }
+.next-steps__item:not(:last-child)::before { content: ""; position: absolute; left: 13px; top: 32px; bottom: 4px; width: 2px; border-radius: 1px; background: var(--line); }
+.next-steps__item.is-done::before { background: var(--ink); }
+.next-steps__item strong { color: var(--ink); }
+.next-steps__icon { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; flex: none; border-radius: 50%; box-shadow: inset 0 0 0 2px var(--line-2); background: var(--surface); color: var(--ink-2); font-size: 14px; font-weight: var(--w-bold); }
+.next-steps__icon svg { width: 15px; height: 15px; }
+.next-steps__item.is-done .next-steps__icon { background: var(--ink); box-shadow: none; color: var(--surface); }
+.next-steps__item.is-next .next-steps__icon { box-shadow: inset 0 0 0 2px var(--ink); color: var(--ink); }
+
+.joined-foot { display: flex; flex-direction: column; align-items: center; gap: 0; }
+.joined-foot__home { min-height: var(--tap); display: inline-flex; align-items: center; color: var(--ink); font-weight: var(--w-bold); text-decoration: underline; text-underline-offset: 3px; }
+
+@container app (min-width: 760px) {
+  .joined-page { max-width: 720px; }
+  .joined-page > .crumbs { margin-inline: var(--s-4); }
+  .joined-body { padding-top: var(--s-6); }
+  .invite-box { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--s-6); row-gap: var(--s-1); align-items: center; padding: var(--s-5) var(--s-6); }
+  .invite-box__title, .invite-box__text { grid-column: 1; }
+  .invite-box__actions { grid-column: 2; grid-row: 1 / span 2; grid-template-columns: repeat(3, 96px); margin-top: 0; }
+  .invite-box__actions .invite-nudge__share { min-width: 0; }
+}
+
+.joined__badge svg path { stroke-dasharray: 24; stroke-dashoffset: 0; }
+.joined__meter .houses__joined { position: relative; z-index: 1; }
+.joined__meter .houses, .joined__meter .houses__home { position: relative; }
+.joined__meter .houses > * { will-change: transform; }
+.joined__meter.is-settled .houses > *, .is-entering .joined__meter .houses > * { animation: none; }
+.joined__meter .houses > .houses__ghost { position: absolute; z-index: 0; margin: 0; }
+.joined__meter.is-revealing .houses > .houses__home { animation: house-in 360ms ease-out both; }
+.joined__meter.is-revealing .houses > .houses__home:nth-child(3) { animation-delay: 60ms; }
+.joined__meter.is-revealing .houses > .houses__home:nth-child(4) { animation-delay: 120ms; }
+.joined__meter.is-revealing .houses > .houses__home:nth-child(5) { animation-delay: 180ms; }
+.houses__ghost .houses__fill { clip-path: none; }
+.houses__fill { position: absolute; inset: 0; color: var(--brand-logo); clip-path: inset(100% 0 0 0); }
+.houses__home .houses__fill { fill: currentColor; stroke: currentColor; }
+.houses__count { display: inline-grid; overflow: hidden; }
+.houses__count > span { grid-area: 1 / 1; text-align: center; }
+
+@keyframes badge-pop {
+  0% { transform: scale(.4); opacity: 0; }
+  60% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); }
+}
+@keyframes check-draw { from { stroke-dashoffset: 24; } to { stroke-dashoffset: 0; } }
+@keyframes focus-in { from { opacity: 0; transform: translateY(6px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes rise-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+.is-entering .joined__badge { animation: badge-pop 460ms cubic-bezier(.3, 1.4, .5, 1) both; }
+.is-entering .joined__badge svg path { animation: check-draw 300ms ease-out 240ms both; }
+.is-entering .joined__title, .is-entering .joined__text { animation: focus-in 520ms cubic-bezier(.22, 1, .36, 1) 460ms both; }
+.is-entering .joined__text { animation-delay: 520ms; }
+.is-entering .joined__meter { animation: fade-in 300ms ease-out 700ms both; }
+.is-entering .invite-box { animation: rise-in 420ms cubic-bezier(.22, 1, .36, 1) 2050ms both; }
+.is-entering .next-steps { animation: rise-in 420ms cubic-bezier(.22, 1, .36, 1) 2130ms both; }
+.is-entering .joined-foot { animation: rise-in 420ms cubic-bezier(.22, 1, .36, 1) 2210ms both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .is-entering .joined__badge, .is-entering .joined__badge svg path, .is-entering .joined__title, .is-entering .joined__text,
+  .is-entering .joined__meter, .is-entering .invite-box, .is-entering .next-steps, .is-entering .joined-foot { animation: none; }
+}

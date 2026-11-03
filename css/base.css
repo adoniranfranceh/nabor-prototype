@@ -1,0 +1,53 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 80px; scroll-padding-bottom: 96px; }
+
+@media (max-width: 759px) {
+  html { scroll-padding-bottom: 160px; }
+}
+
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: var(--t-base);
+  line-height: 1.5;
+}
+
+h1, h2, h3, p { margin: 0; }
+
+[hidden] { display: none !important; }
+
+a { color: var(--brand); }
+a:hover { color: var(--brand-strong); }
+
+button { font: inherit; color: inherit; }
+
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+
+.app {
+  container-name: app;
+  container-type: inline-size;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-inline: var(--s-4);
+}
+
+.stack { display: flex; flex-direction: column; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+@container app (min-width: 760px) {
+  .container { padding-inline: var(--s-8); }
+}

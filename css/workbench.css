@@ -1,0 +1,32 @@
+.wb { display: grid; grid-template-columns: 220px minmax(0, 1fr); min-height: 100vh; background: #FAFAF9; }
+.wb__nav { position: sticky; top: 0; height: 100vh; overflow: auto; padding: 24px 16px; border-right: 1px solid var(--line); background: var(--surface); }
+.wb__nav h1 { font-size: 15px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-2); margin-bottom: 12px; }
+.wb__nav a { display: block; padding: 8px 12px; border-radius: 8px; color: var(--ink); text-decoration: none; font-size: 15px; }
+.wb__nav a:hover, .wb__nav a[aria-current="true"] { background: var(--surface-3); }
+.wb__nav .wb__all { margin-top: 12px; color: var(--ink-2); }
+.wb__main { padding: 32px; display: flex; flex-direction: column; gap: 56px; }
+
+.wb-section { display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 24px; }
+.wb-section[hidden] { display: none; }
+.wb-section__title { font-size: 24px; font-weight: 700; }
+.wb-section__file { font-family: ui-monospace, monospace; font-size: 13px; color: var(--ink-2); }
+.wb-stages { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; }
+
+.stage { container-name: app; container-type: inline-size; background: var(--surface); border: 1px dashed var(--line-2); border-radius: 12px; overflow: hidden; }
+.stage--phone { width: 390px; flex: none; }
+.stage--wide { flex: 1 1 760px; min-width: 760px; }
+.stage__label { display: block; padding: 6px 12px; font-size: 12px; color: var(--ink-3); background: var(--surface-2); border-bottom: 1px dashed var(--line-2); }
+.stage__body { padding: 16px; }
+.stage .topbar, .stage .bottombar { position: static; }
+
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+.swatch { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; font-size: 13px; }
+.swatch__chip { height: 56px; }
+.swatch__meta { padding: 8px 10px; display: flex; flex-direction: column; }
+.swatch__meta code { color: var(--ink-2); }
+.swatch-group { font-weight: 700; margin-top: 8px; }
+
+.scale-row { display: flex; align-items: center; gap: 16px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.scale-row code { width: 120px; flex: none; color: var(--ink-2); font-size: 13px; }
+.space-bar { height: 16px; background: var(--brand-tint); border: 1px solid var(--brand); }
+.wb-credits { margin-top: 16px; font-size: 12px; color: var(--ink-3); }

@@ -1,0 +1,17 @@
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--surface);
+  background: var(--ink-3);
+  color: var(--surface);
+  font-size: var(--t-xs);
+  font-weight: var(--w-bold);
+  flex: none;
+  text-decoration: none;
+}
+.avatar--md { width: 36px; height: 36px; font-size: 14px; border: 0; }
+.avatar--account { background: #5E6B7A; color: var(--surface); }

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<title>Nabor · Service</title>
+</head>
+<body>
+<div class="app is-detail">
+  <div data-include="partials/topbar.html"></div>
+
+  <main class="service-page">
+    <div class="detail-bar" data-detail-bar>
+      <a class="round-btn" href="discover.html" aria-label="Back" data-back>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+      </a>
+    </div>
+
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="discover.html">Home</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+      <span aria-current="page" data-crumb></span>
+    </nav>
+
+    <section class="service-top">
+      <div class="service-top__media"><img data-photo alt="" width="1200" height="600"></div>
+      <div class="service-top__info">
+        <div class="service-top__text">
+          <h1 class="service-top__title" data-title></h1>
+          <span class="service-top__place" data-place></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-offers" aria-labelledby="offers-title">
+      <div class="service-offers__head">
+        <h2 class="service-offers__title" id="offers-title" data-offers-title></h2>
+        <p class="offers-legend">
+          <span>Each price unlocks when enough neighbors pick it.</span>
+          <span class="offers-legend__keys">
+            <span class="offers-legend__key"><span class="offers-legend__in"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 7.2 8 1.8l6.5 5.4V14a.8.8 0 0 1-.8.8H2.3a.8.8 0 0 1-.8-.8Z"/></svg></span>neighbors in</span>
+            <span class="offers-legend__key"><span class="offers-legend__needed"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 7.2 8 1.8l6.5 5.4V14a.8.8 0 0 1-.8.8H2.3a.8.8 0 0 1-.8-.8Z"/></svg></span>still needed</span>
+          </span>
+        </p>
+      </div>
+      <div class="stack" style="gap: var(--s-4)" role="radiogroup" aria-labelledby="offers-title" data-offers></div>
+    </section>
+
+    <div class="choose-bar">
+      <span class="choose-bar__label">Your choice</span>
+      <span class="choose-bar__provider" data-choice-provider></span>
+      <span class="choose-bar__price" data-choice-price></span>
+      <a class="btn btn--primary choose-bar__cta" href="#" data-choice-cta>Join this offer</a>
+      <span class="choose-bar__note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7"/></svg>
+        No commitment yet
+      </span>
+    </div>
+  </main>
+
+</div>
+<script type="module" src="js/service.js"></script>
+</body>
+</html>

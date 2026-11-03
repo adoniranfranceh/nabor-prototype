@@ -1,0 +1,7 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  flex: none;
+}
+.logo__img { display: block; height: 28px; width: auto; }

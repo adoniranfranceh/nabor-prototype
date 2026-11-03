@@ -1,0 +1,28 @@
+.bottombar {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  padding: var(--s-2) 0 var(--s-3);
+}
+
+.bottombar__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-1);
+  min-height: 48px;
+  color: var(--ink-2);
+  font-size: var(--t-xs);
+  font-weight: var(--w-semibold);
+  text-decoration: none;
+}
+.bottombar__item svg { width: 26px; height: 26px; }
+.bottombar__item[aria-current="page"] { color: var(--brand); font-weight: var(--w-bold); }
+
+@container app (min-width: 760px) {
+  .bottombar { display: none; }
+}

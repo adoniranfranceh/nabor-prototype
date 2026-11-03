@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<title>Nabor · You're in</title>
+</head>
+<body>
+<div class="app is-detail">
+<div class="app is-detail">
+  <div data-include="partials/topbar.html"></div>
+
+  <main class="joined-page is-entering">
+    <div class="detail-bar" data-detail-bar>
+      <a class="round-btn" href="discover.html" aria-label="Back" data-back>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+      </a>
+    </div>
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="discover.html">Home</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+      <a href="#" data-crumb-service></a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+      <span aria-current="page">You're in</span>
+    </nav>
+
+    <div class="joined-body">
+      <section class="joined">
+        <span class="joined__badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg>
+        </span>
+        <h1 class="joined__title" tabindex="-1">You're in!</h1>
+        <p class="joined__text" data-joined-text></p>
+        <div class="joined__meter" data-joined-meter></div>
+      </section>
+
+      <section class="invite-box" aria-labelledby="invite-box-title">
+        <h2 class="invite-box__title" id="invite-box-title" data-invite-title></h2>
+        <p class="invite-box__text">Neighbors who join this offer get the same price. Send them the link.</p>
+        <div class="invite-box__actions">
+          <a class="invite-nudge__share" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4Z"/></svg>Text</a>
+          <a class="invite-nudge__share" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
+          <a class="invite-nudge__share" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7L11.5 6.8"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.5-1.5"/></svg>Copy link</a>
+        </div>
+      </section>
+
+      <section class="next-steps" aria-labelledby="next-title">
+        <h2 class="next-steps__title" id="next-title">What happens next</h2>
+        <ol class="next-steps__list">
+          <li class="next-steps__item is-done">
+            <span class="next-steps__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></span>
+            <span><strong>You joined today.</strong> No payment, no contract. <a class="next-steps__link" href="#" data-leave>You can leave anytime.</a></span>
+          </li>
+          <li class="next-steps__item is-next">
+            <span class="next-steps__icon" aria-hidden="true">2</span>
+            <span><strong>The price unlocks.</strong> We ask you to confirm before anything is booked. Your contact info stays private until then.</span>
+          </li>
+          <li class="next-steps__item">
+            <span class="next-steps__icon" aria-hidden="true">3</span>
+            <span><strong>You and the pro set a date.</strong> You pay them directly.</span>
+          </li>
+        </ol>
+      </section>
+
+      <div class="joined-foot">
+        <a class="joined-foot__home" href="discover.html">Back to home</a>
+      </div>
+    </div>
+  </main>
+</div>
+<script type="module" src="js/joined.js"></script>
+</body>
+</html>
